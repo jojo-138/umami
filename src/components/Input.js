@@ -15,7 +15,7 @@ const Input = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <div>
-        <input type="text" onChange={(e) => setInput(e.target.value)} />
+        <input type="text" aria-label="Search recipes" onChange={(e) => setInput(e.target.value)} />
         <FaSearch />
       </div>
     </Form>

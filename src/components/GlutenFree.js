@@ -8,9 +8,9 @@ const GlutenFree = () => {
 
   return (
     <Wrapper>
-      <h3 id="random-carousel">Gluten Free</h3>
+      <h3 id="glutenfree-carousel">Gluten Free</h3>
       <Splide
-        aria-labelledby="random-carousel"
+        aria-labelledby="glutenfree-carousel"
         options={{
           speed: 500,
           perPage: 3,
