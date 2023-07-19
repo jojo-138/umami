@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Input = () => {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
