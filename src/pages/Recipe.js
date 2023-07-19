@@ -3,7 +3,13 @@ import { useParams } from 'react-router-dom';
 import { RWrapper, Info, Button, Table } from '../style';
 
 const Recipe = () => {
-  const [recipe, setRecipe] = useState({});
+  const [recipe, setRecipe] = useState({
+    title: '',
+    image: '',
+    servings: '',
+    readyInMinutes: '',
+    sourceUrl: ''
+  });
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
   const [activeButton, setActiveButton] = useState('instructions');
@@ -16,7 +22,13 @@ const Recipe = () => {
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.API_KEY}&includeNutrition=true`
     );
     const data = await response.json();
-    setRecipe(data);
+    setRecipe({
+      title: data.title,
+      image: data.image,
+      servings: data.servings,
+      readyInMinutes: data.readyInMinutes,
+      sourceUrl: data.sourceUrl
+    });
     setIngredients(data.extendedIngredients);
     setInstructions(data.analyzedInstructions[0].steps);
     setNutrients(data.nutrition.nutrients.slice(0, 9));
@@ -61,7 +73,7 @@ const Recipe = () => {
                     {ingredient.amount} {ingredient.measures.us.unitShort}{' '}
                     <strong>{ingredient.name}</strong>
                     {ingredient.meta?.map((str) => {
-                      return str !== '()' ? <span key={str}>, {str}</span> : null;
+                      return <span key={str}>, {str}</span>;
                     })}
                   </li>
                 );

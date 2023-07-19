@@ -59,8 +59,8 @@ export const CLink = styled(NavLink)`
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background-color: #1f1f1f;
   background: linear-gradient(#868686, #1f1f1f);
+  background-color: #1f1f1f;
   width: 3rem;
   height: 3rem;
   color: white;
@@ -72,7 +72,7 @@ export const CLink = styled(NavLink)`
     font-size: 1rem;
   }
   &.active {
-    background: linear-gradient(#d66e66, #b21024);
+    background: #b21024;
   }
 `;
 

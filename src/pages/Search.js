@@ -1,4 +1,3 @@
-// import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Grid, Card, Shadow } from '../style';
 import Page from '../components/Page';
